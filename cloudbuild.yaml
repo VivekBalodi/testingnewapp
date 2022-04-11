@@ -5,7 +5,7 @@ steps:
     [ 
       'build',
 #       '-t',
-      'gcr.io/$PROJECT_ID/gmas-test:latest',
+      'gcr.io/amit-testing-277517/gmas-test:latest',
 #       '-t',
 #       'gcr.io/$PROJECT_ID/ixnestjsapp:$COMMIT_SHA',
 #       '-t',
@@ -20,7 +20,7 @@ steps:
   args: 
     [
       'push', 
-      'gcr.io/$PROJECT_ID/gmas-test:$COMMIT_SHA'
+      'gcr.io/amit-testing-277517/gmas-test:latest'
     ]
 #   id: 'push-image-to-container-registry'
 #   waitFor: ['build-image-gmas-test'] # The push start once build is done
