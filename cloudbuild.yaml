@@ -25,23 +25,23 @@ steps:
   id: 'push-image-to-container-registry'
   waitFor: ['build-image-ixnestjsapp'] # The push start once build is done
 
-# Deploy container image to Cloud Run
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-    [
-      'run',
-      'deploy',
-      'ixnestjsapp',
-      '--image',
-      'gcr.io/$PROJECT_ID/ixnestjsapp:$COMMIT_SHA',
-      '--region',
-      'us-west2',
-      '--platform',
-      'managed',
-      '--allow-unauthenticated',
-    ]
+# # Deploy container image to Cloud Run
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   args:
+#     [
+#       'run',
+#       'deploy',
+#       'ixnestjsapp',
+#       '--image',
+#       'gcr.io/$PROJECT_ID/ixnestjsapp:$COMMIT_SHA',
+#       '--region',
+#       'us-west2',
+#       '--platform',
+#       'managed',
+#       '--allow-unauthenticated',
+#     ]
 
-images:
-- 'gcr.io/$PROJECT_ID/ixnestjsapp:latest'
-- 'gcr.io/$PROJECT_ID/ixnestjsapp:$COMMIT_SHA'
-- 'gcr.io/$PROJECT_ID/ixnestjsapp:$BUILD_ID'
+# images:
+# - 'gcr.io/$PROJECT_ID/ixnestjsapp:latest'
+# - 'gcr.io/$PROJECT_ID/ixnestjsapp:$COMMIT_SHA'
+# - 'gcr.io/$PROJECT_ID/ixnestjsapp:$BUILD_ID'
